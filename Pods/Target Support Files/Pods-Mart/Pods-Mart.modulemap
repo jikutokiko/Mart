@@ -1,0 +1,6 @@
+framework module Pods_Mart {
+  umbrella header "Pods-Mart-umbrella.h"
+
+  export *
+  module * { export * }
+}

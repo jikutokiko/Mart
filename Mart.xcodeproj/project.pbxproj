@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3E09310E2143690A00C24B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09310D2143690A00C24B5A /* AppDelegate.swift */; };
-		3E0931102143690A00C24B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09310F2143690A00C24B5A /* ViewController.swift */; };
 		3E0931132143690A00C24B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E0931112143690A00C24B5A /* Main.storyboard */; };
 		3E0931162143690A00C24B5A /* Mart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E0931142143690A00C24B5A /* Mart.xcdatamodeld */; };
 		3E0931182143690B00C24B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0931172143690B00C24B5A /* Assets.xcassets */; };
 		3E09311B2143690B00C24B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E0931192143690B00C24B5A /* LaunchScreen.storyboard */; };
 		3E0931262143690C00C24B5A /* MartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0931252143690C00C24B5A /* MartTests.swift */; };
+		3E093131214369D200C24B5A /* CollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E093130214369D200C24B5A /* CollectionCollectionViewController.swift */; };
+		3E0931332143772300C24B5A /* ItemDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0931322143772300C24B5A /* ItemDisplayCell.swift */; };
+		3E09313821437AF700C24B5A /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09313721437AF700C24B5A /* ProductModel.swift */; };
+		3E09313A21437B5B00C24B5A /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E09313921437B5B00C24B5A /* APIHandler.swift */; };
+		3EF7C95E2143DD8A002CFD1B /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7C95D2143DD8A002CFD1B /* ItemDetailsViewController.swift */; };
+		CF4083D55A0946CEACAC032D /* Pods_Mart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF7A3202ADAE546B6F4F9CC /* Pods_Mart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +34,6 @@
 /* Begin PBXFileReference section */
 		3E09310A2143690A00C24B5A /* Mart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E09310D2143690A00C24B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E09310F2143690A00C24B5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E0931122143690A00C24B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E0931152143690A00C24B5A /* Mart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mart.xcdatamodel; sourceTree = "<group>"; };
 		3E0931172143690B00C24B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +42,14 @@
 		3E0931212143690C00C24B5A /* MartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0931252143690C00C24B5A /* MartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartTests.swift; sourceTree = "<group>"; };
 		3E0931272143690C00C24B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E093130214369D200C24B5A /* CollectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCollectionViewController.swift; sourceTree = "<group>"; };
+		3E0931322143772300C24B5A /* ItemDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDisplayCell.swift; sourceTree = "<group>"; };
+		3E09313721437AF700C24B5A /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		3E09313921437B5B00C24B5A /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		3EF7C95D2143DD8A002CFD1B /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
+		4CF7A3202ADAE546B6F4F9CC /* Pods_Mart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		859B5C7F4A3B757E0D71E753 /* Pods-Mart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mart/Pods-Mart.debug.xcconfig"; sourceTree = "<group>"; };
+		A77031DB33F54A4F30B71B7E /* Pods-Mart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mart/Pods-Mart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4083D55A0946CEACAC032D /* Pods_Mart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +71,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16A633DD3DEE086E0C9487C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CF7A3202ADAE546B6F4F9CC /* Pods_Mart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3E0931012143690A00C24B5A = {
 			isa = PBXGroup;
 			children = (
 				3E09310C2143690A00C24B5A /* Mart */,
 				3E0931242143690C00C24B5A /* MartTests */,
 				3E09310B2143690A00C24B5A /* Products */,
+				6969C300F4980681C9C8754C /* Pods */,
+				16A633DD3DEE086E0C9487C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,10 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				3E09310D2143690A00C24B5A /* AppDelegate.swift */,
-				3E09310F2143690A00C24B5A /* ViewController.swift */,
 				3E0931112143690A00C24B5A /* Main.storyboard */,
-				3E0931172143690B00C24B5A /* Assets.xcassets */,
 				3E0931192143690B00C24B5A /* LaunchScreen.storyboard */,
+				3E09313521437A9000C24B5A /* FE */,
+				3E09313621437ACA00C24B5A /* BE */,
+				3E0931172143690B00C24B5A /* Assets.xcassets */,
 				3E09311C2143690B00C24B5A /* Info.plist */,
 				3E0931142143690A00C24B5A /* Mart.xcdatamodeld */,
 			);
@@ -99,6 +123,34 @@
 			path = MartTests;
 			sourceTree = "<group>";
 		};
+		3E09313521437A9000C24B5A /* FE */ = {
+			isa = PBXGroup;
+			children = (
+				3E093130214369D200C24B5A /* CollectionCollectionViewController.swift */,
+				3E0931322143772300C24B5A /* ItemDisplayCell.swift */,
+				3EF7C95D2143DD8A002CFD1B /* ItemDetailsViewController.swift */,
+			);
+			path = FE;
+			sourceTree = "<group>";
+		};
+		3E09313621437ACA00C24B5A /* BE */ = {
+			isa = PBXGroup;
+			children = (
+				3E09313721437AF700C24B5A /* ProductModel.swift */,
+				3E09313921437B5B00C24B5A /* APIHandler.swift */,
+			);
+			path = BE;
+			sourceTree = "<group>";
+		};
+		6969C300F4980681C9C8754C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				859B5C7F4A3B757E0D71E753 /* Pods-Mart.debug.xcconfig */,
+				A77031DB33F54A4F30B71B7E /* Pods-Mart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E09312A2143690C00C24B5A /* Build configuration list for PBXNativeTarget "Mart" */;
 			buildPhases = (
+				8547832E41E9C5CFCB267ADF /* [CP] Check Pods Manifest.lock */,
 				3E0931062143690A00C24B5A /* Sources */,
 				3E0931072143690A00C24B5A /* Frameworks */,
 				3E0931082143690A00C24B5A /* Resources */,
+				28CA6878D6597771CE01F739 /* [CP] Embed Pods Frameworks */,
+				AD802B36EE28AE94EC6EDDDB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,14 +250,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28CA6878D6597771CE01F739 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mart/Pods-Mart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mart/Pods-Mart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8547832E41E9C5CFCB267ADF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD802B36EE28AE94EC6EDDDB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mart/Pods-Mart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E0931062143690A00C24B5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0931102143690A00C24B5A /* ViewController.swift in Sources */,
 				3E0931162143690A00C24B5A /* Mart.xcdatamodeld in Sources */,
+				3E0931332143772300C24B5A /* ItemDisplayCell.swift in Sources */,
+				3E093131214369D200C24B5A /* CollectionCollectionViewController.swift in Sources */,
+				3E09313A21437B5B00C24B5A /* APIHandler.swift in Sources */,
 				3E09310E2143690A00C24B5A /* AppDelegate.swift in Sources */,
+				3EF7C95E2143DD8A002CFD1B /* ItemDetailsViewController.swift in Sources */,
+				3E09313821437AF700C24B5A /* ProductModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,11 +475,13 @@
 		};
 		3E09312B2143690C00C24B5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 859B5C7F4A3B757E0D71E753 /* Pods-Mart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXB7HKGLGZ;
 				INFOPLIST_FILE = Mart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,11 +495,13 @@
 		};
 		3E09312C2143690C00C24B5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A77031DB33F54A4F30B71B7E /* Pods-Mart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXB7HKGLGZ;
 				INFOPLIST_FILE = Mart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
