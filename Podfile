@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'Mart' do
 	pod 'Alamofire', '~> 4.4'
+    pod 'AlamofireImage', '~> 3.3'
 	pod 'SwiftyJSON', '~> 3.1'
 end
 

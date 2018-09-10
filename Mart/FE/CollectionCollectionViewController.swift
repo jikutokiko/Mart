@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 private let reuseIdentifier = "Cell"
 var cellBgColorFlag = true
-fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 15.0, bottom: 20.0, right: 15.0)
+fileprivate let itemsPerRow: CGFloat = 3
 
 class CollectionCollectionViewController: UICollectionViewController {
 
@@ -21,12 +24,12 @@ class CollectionCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         Products.getProducts { list in
             self.productList = list
             self.numberOfProducts = (self.productList?.count)!
             self.collectionView?.reloadData()
         }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,28 +59,23 @@ class CollectionCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return self.numberOfProducts
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ItemDisplayCell
         
-        cell.photo.load(url: URL(string: "https://media.redmart.com/newmedia/200p/i/m/9300617408710_0001_1492060322570.jpg")!)
-        //cell.photo.downloaded(from: "https://www.exchangewire.com/wp-content/uploads/2016/04/Apple-Logo.png")
-        //cell.photo.downloaded(from: "https://media.redmart.com/newmedia/200p/i/m/9300617408710_0001_1492060322570.jpg")
-        //cell.photo.downloaded(from: "https://media.redmart.com/newmedia/200p\(self.productList![indexPath.row].productImageUrl)")
+        /**Having issues with media.redmart.com, so temporarily used random image*/
+        cell.photo.load(url: URL(string: "https://picsum.photos/200/200?image=\(indexPath.row)")!)
+        //uncomment to load actual images from API
+        //cell.photo.load(url: URL(string: self.productList![indexPath.row].productImageUrl)!)
+        
         cell.name.text = self.productList![indexPath.row].productName
         cell.price.text = "$ \(self.productList![indexPath.row].productPrice)"
-        cell.layer.borderColor = UIColor.gray.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
         return cell
     }
 
@@ -114,8 +112,9 @@ class CollectionCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedItem = indexPath.row
     }
-
+    
 }
+
 
 extension UIImageView {
     func load(url: URL) {
@@ -131,25 +130,28 @@ extension UIImageView {
     }
 }
 
-//extension UIImageView {
-//    func downloaded(from url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
-//        contentMode = mode
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            guard
-//                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-//                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-//                let data = data, error == nil,
-//                let image = UIImage(data: data)
-//                else { return }
-//            DispatchQueue.main.async() {
-//                self.image = image
-//            }
-//            }.resume()
-//    }
-//    func downloaded(from link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
-//        guard let url = URL(string: link) else { return }
-//        downloaded(from: url, contentMode: mode)
-//    }
-//}
+
+extension CollectionCollectionViewController : UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let oLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: (oLayout?.itemSize.height)!)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+}
 
 

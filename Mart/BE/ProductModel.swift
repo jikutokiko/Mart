@@ -12,8 +12,11 @@ import SwiftyJSON
 struct Products {
     var productKey: Int
     var productImageUrl: String
+    var productImageRandomUrl: String
     var productName: String
-    var productPrice: String
+    var productDescription: String
+    var productPrice: Float
+    var productRegularPrice: Float
     
     private static var _cache:Array<Products>?
     
@@ -30,11 +33,15 @@ struct Products {
                 _cache = Array<Products>.init()
                 var cnt = 0
                 for json in jsonData {
+                    let currentPrice = json["pricing"]["on_sale"].intValue == 1 ? json["pricing"]["promo_price"].floatValue : json["pricing"]["price"].floatValue
                     _cache!.append(Products.init(
                         productKey: json["id"].intValue,
-                        productImageUrl: json["images"][0]["name"].stringValue.replacingOccurrences(of:"\\", with: ""),
+                        productImageUrl: "https://media.redmart.com/newmedia/200p\(json["images"][0]["name"].stringValue.replacingOccurrences(of:"\\", with: ""))",
+                        productImageRandomUrl: "https://picsum.photos/200/200?image=\(cnt)",
                         productName: json["title"].stringValue,
-                        productPrice: json["pricing"]["price"].stringValue
+                        productDescription: json["desc"].stringValue,
+                        productPrice: currentPrice,
+                        productRegularPrice: json["pricing"]["price"].floatValue
                     ))
                     print("\(cnt) : \(json["title"].stringValue)")
                     cnt = cnt + 1

@@ -15,12 +15,33 @@ class ItemDetailsViewController: UIViewController {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     
+    @IBOutlet weak var productDescLabel: UILabel!
+    @IBOutlet weak var productCurrentPrice: UILabel!
+    @IBOutlet weak var productRegularPrice: UILabel!
+    @IBOutlet weak var productSavings: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.productNameLabel.text = self.item?.productName
-        // Do any additional setup after loading the view.
+        self.productDescLabel.text = self.item?.productDescription
+        self.productCurrentPrice.text = "$\(String(describing: (self.item?.productPrice)!))"
+        self.productRegularPrice.attributedText = "$\(String(describing: (self.item?.productRegularPrice)!))".strikeThrough()
+        self.productSavings.text = "SAVE \((self.item?.productRegularPrice)! - (self.item?.productPrice)!)"
         
+        self.productCurrentPrice.sizeToFit()
+        self.productRegularPrice.sizeToFit()
+        self.productDescLabel.sizeToFit()
+
+        
+        /**Having issues with media.redmart.com, so temporarily used random image*/
+        self.productImageView.load(url: URL(string: (self.item?.productImageRandomUrl)!)!)
+        //uncomment to load actual images from API
+        //self.productImageView.load(url: URL(string: (self.item?.productImageUrl)!)!)
+        
+        if(self.item?.productRegularPrice == self.item?.productPrice){
+            self.productRegularPrice.isHidden = true
+            self.productSavings.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,4 +60,12 @@ class ItemDetailsViewController: UIViewController {
     }
     */
 
+}
+
+extension String {
+    func strikeThrough() -> NSAttributedString {
+        let attributeString =  NSMutableAttributedString(string: self)
+        attributeString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(0,attributeString.length))
+        return attributeString
+    }
 }
